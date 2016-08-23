@@ -31,6 +31,9 @@ public class HUD {
 
         viewport = new FitViewport(MyGdxGame.V_WIDTH, MyGdxGame.V_HEIGHT, new OrthographicCamera());
         stage = new Stage(viewport, sb);
+        Table table = new Table();
+        table.top();
+        table.setFillParent(true);
 
         Label countDownLabel = new Label(String.format("%03d", worldTimer), new Label.LabelStyle(new BitmapFont(), Color.WHITE));
         Label scoreLabel= new Label(String.format("%06d", score), new Label.LabelStyle(new BitmapFont(), Color.WHITE));;
@@ -39,9 +42,7 @@ public class HUD {
         Label worldLabel =new Label("WORLD", new Label.LabelStyle(new BitmapFont(), Color.WHITE));
         Label MarioLabel = new Label("Mario", new Label.LabelStyle(new BitmapFont(), Color.WHITE));
 
-        Table table = new Table();
-        table.top();
-        table.setFillParent(true);
+
 
         table.add(MarioLabel).expandX().padTop(10);
         table.add(worldLabel).expandX().padTop(10);
